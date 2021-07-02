@@ -7,11 +7,18 @@ void setup() {
   Serial.println("Starting...");
 
   WiFi.begin(ssid,password);
-  for(int i = 0 ;WiFi.status() != WL_CONNECTED; i++)
+  
+  while(WiFi.status() != WL_CONNECTED)
   {
     delay(250);
     Serial.print(".");
   }
+  
+  /*for(int i = 0 ;WiFi.status() != WL_CONNECTED; i++)
+  {
+    delay(250);
+    Serial.print(".");
+  }*/
 
   Serial.println("");
   Serial.print("WiFi connected");
